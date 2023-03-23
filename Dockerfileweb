@@ -1,6 +1,9 @@
 # start by pulling the python image
 FROM python:3.8-alpine
 
+# step5
+ENV MESSAGE="task5-step5"
+
 # copy the requirements file into the image
 COPY ./requirements.txt /app/requirements.txt
 
@@ -14,6 +17,8 @@ RUN pip install -r requirements.txt
 COPY . /app
 
 # configure the container to run in an executed manner
-ENTRYPOINT ["python"]
+# ENTRYPOINT ["python"]
+ENTRYPOINT ["printenv"] # step 5
 
-CMD ["app.py"]
+# CMD ["app.py"]
+CMD ["MESSAGE"] # step 5

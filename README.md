@@ -15,3 +15,5 @@ docker-compose.yml file is created with web and db services.
 `docker-compose up -d`
 The web app is accessible on `localhost:5000`
 
+# Step 5
+Dockerfileweb is changes and instead of running app.py I printed the value of env variable and verified in logs.
