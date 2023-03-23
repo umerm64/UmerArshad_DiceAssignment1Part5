@@ -17,3 +17,6 @@ The web app is accessible on `localhost:5000`
 
 # Step 5
 Dockerfileweb is changes and instead of running app.py I printed the value of env variable and verified in logs.
+
+# Step 6
+volume `db-data` is added in docker-compose.yml and mounted within the db container.
