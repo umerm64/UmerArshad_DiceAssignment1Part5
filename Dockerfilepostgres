@@ -1,0 +1,9 @@
+FROM postgres
+
+RUN mkdir /sql
+
+COPY . /docker-entrypoint-initdb.d/
+
+RUN psql -f /sql/create_user.sql
+RUN psql -U user -W 123 -f create_db.sql
+RUN psql -U user -W 123 -d school_ats -f create_tables.sql
