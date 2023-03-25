@@ -4,8 +4,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfileweb
-    ports:
-      - "5000:5000"
     networks:
       - backend
 
@@ -19,6 +17,14 @@ services:
       - backend
     volumes:
       - db-data:/var/lib/postgresql/data
+
+  nginx:
+    container_name: nginx
+    build: nginx
+    ports:
+      - 80:80
+    depends_on:
+      - web
 
 networks: 
   backend:

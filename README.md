@@ -20,3 +20,7 @@ Dockerfileweb is changes and instead of running app.py I printed the value of en
 
 # Step 6
 volume `db-data` is added in docker-compose.yml and mounted within the db container.
+
+# Step 7
+The scaling is done by using nginx as a load balancer.
+The dockerfile and conf files are present under nginx folder.
