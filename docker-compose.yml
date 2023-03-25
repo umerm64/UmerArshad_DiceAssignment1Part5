@@ -4,6 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfileweb
+    ports:
+      - "5000:5000"
     networks:
       - backend
 
@@ -25,6 +27,17 @@ services:
       - 80:80
     depends_on:
       - web
+
+  example-prometheus:
+    image: prom/prometheus:latest
+    restart: unless-stopped
+    container_name: example-prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
 
 networks: 
   backend:

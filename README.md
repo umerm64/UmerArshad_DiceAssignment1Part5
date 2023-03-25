@@ -24,3 +24,8 @@ volume `db-data` is added in docker-compose.yml and mounted within the db contai
 # Step 7
 The scaling is done by using nginx as a load balancer.
 The dockerfile and conf files are present under nginx folder.
+
+# Step 8
+The prometheus container is added in `docker-compose.yml` file. The configuration file is added `prometheus.yml`.
+The docker target can be seen here:
+`http://localhost:9090/targets`
